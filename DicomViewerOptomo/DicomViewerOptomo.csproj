@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Kitware.mummy.Runtime" Version="1.2.0" />
+    <PackageReference Include="Kitware.VTK" Version="9.3.2024.515" />
+    <PackageReference Include="Kitware.WPFControls" Version="9.3.2024.515" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Kitware.mummy.Runtime">
+      <HintPath>..\..\..\..\..\..\Program Files\ActiViz.NET 9.3.2024 Trial Edition\bin\Kitware.mummy.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Kitware.VTK">
+      <HintPath>..\..\..\..\..\..\Program Files\ActiViz.NET 9.3.2024 Trial Edition\bin\Kitware.VTK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

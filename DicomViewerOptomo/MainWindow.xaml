@@ -1,0 +1,49 @@
+﻿<Window x:Class="DicomViewerOptomo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:local="clr-namespace:DicomViewerOptomo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Button x:Name="minButton" Click="minButton_Click" Content="_"/>
+            <Button x:Name="closeButton" Click="closeButton_Click" Content="X"/>
+            <TextBlock Text="Y -->" FontSize="16"/>
+            <TextBlock x:Name="Y_Layer" FontSize="16"/>
+            <TextBlock Text="X -->" FontSize="16"/>
+            <TextBlock x:Name="X_Layer" FontSize="16"/>
+            <TextBlock Text="Z -->" FontSize="16"/>
+            <TextBlock x:Name="Z_Layer" FontSize="16"/>
+        </StackPanel>
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Slider Grid.Column="0" x:Name="Y_Color" Maximum="100" Minimum="0" Value="0" Orientation="Vertical" VerticalAlignment="Stretch" Margin="5" ValueChanged="Y_Color_ValueChanged"/>
+            <Slider Grid.Column="1" x:Name="X_Color" Maximum="100" Minimum="0" Value="0" Orientation="Vertical" VerticalAlignment="Stretch" Margin="5" ValueChanged="X_Color_ValueChanged"/>
+            <Slider Grid.Column="2" x:Name="Z_Color" Maximum="100" Minimum="0" Value="0" Orientation="Vertical" VerticalAlignment="Stretch" Margin="5" ValueChanged="Z_Color_ValueChanged"/>
+        </Grid>
+        <wfi:WindowsFormsHost Grid.Row="0" Grid.Column="1" x:Name="Y_Slice" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Slider Grid.Row="0" Grid.Column="2" x:Name="Y_Slider" Orientation="Vertical" ValueChanged="Y_Slider_ValueChanged"/>
+        <wfi:WindowsFormsHost Grid.Row="0" Grid.Column="3" x:Name="X_Slice" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Slider Grid.Row="0" Grid.Column="4" x:Name="X_Slider" Orientation="Vertical" ValueChanged="X_Slider_ValueChanged"/>
+        <wfi:WindowsFormsHost Grid.Row="1" Grid.Column="1" x:Name="Z_Slice" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Slider Grid.Row="1" Grid.Column="2" x:Name="Z_Slider" Orientation="Vertical" ValueChanged="Z_Slider_ValueChanged"/>
+    </Grid>
+</Window>
